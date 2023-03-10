@@ -1,0 +1,519 @@
+/* IMPORT GOOGLE FOONT */
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap');
+html {
+  font-size: 1rem;
+}
+
+:root {
+  --body-font: 'Oxanium', sans-serif;
+  --big-font: 4rem;
+  --h1-font: 2.4rem;
+  --h2-font: 2.4rem;
+  --h3-font: 2rem;
+  --h4-font: 1.8rem;
+  --normal-font: 1.6rem;
+  --small-font: 1.4rem;
+  --smaller-font: 1.1rem;
+
+  /* FONT WEIGHT */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /* COLOR VARIABLES */
+  --background-color: #0d0d2b;
+  --primary-color: #3671e9;
+  --primary-color-hover: #143e63;
+  --color-white: #fff;
+  --text-color-dark: rgb(57, 57, 57);
+  --color-purple: #2b076e;
+  --hover-color: rgba(255, 255, 255, 0.1);
+
+  /* Z-INDEX */
+  --z-overlay: 10;
+  --z-fixed: 1000;
+
+  /* TRANSITIONS */
+  --trans-1: 0.2;
+  --trans-2: 0.3;
+  --trans-3: 0.5;
+}
+
+@media screen and(max-width:990px) {
+  :root {
+    --big-font: 3.5rem;
+    --h1-font: 2.4rem;
+    --h2-font: 2rem;
+    --h3-font: 1.8rem;
+    --h4-font: 1.6rem;
+    --normal-font: 1.5rem;
+    --small-font: 1.3rem;
+    --smaller-font: 1.2rem;
+  }
+}
+
+/* Pre Css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input,
+select {
+  font-family: var(--body-font);
+  font-size: var(--normal-font);
+  font-weight: var(--font-regular);
+  color: var(--color-white);
+}
+
+/* CHROME, SAFARI, EDGE, OPERA  */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* -webkit-appearance: none; */
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--background-color);
+  background-image: radial-gradient(circle at center center, #ececec, #2b2b65),
+    repeating-linear-gradient(
+      circle at center center,
+      #ececec47,
+      #ececec47,
+      10px,
+      transparent 20px,
+      transparent 10px
+    );
+  background-blend-mode: multiply;
+  /* font-size: 1rem; */
+}
+header {
+  font-size: var(--smaller-font);
+  font-family: var(--body-font);
+}
+button {
+  background-color: var(--primary-color);
+}
+main {
+  position: relative;
+}
+
+/* nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    position: relative;
+}
+
+nav .logo {
+    display: flex;
+    /* justify-content: center; */
+/*align-items: center;
+}
+h6 {
+    margin-left: 1em;
+    font-size: var(--smaller-font);
+}
+
+nav .nav-items {
+    display: none;
+}
+
+nav .nav-links {
+    margin-left: 1.8em;
+}
+.show-links {
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: calc(100vh-70px);
+    background-color: var(--Very-Light-Gray);
+    margin: 2em 0 5em 0;
+    z-index: 100;
+    border-radius: 12px 12px 12px 12px;
+}
+.close {
+    position: absolute;
+}
+
+hover:a {
+    border-bottom: 1em solid var(--primary-color);
+}
+.head_btn {
+    background-color: var(--primary-color);
+    font-size: inherit;
+    font-family: inherit;
+    border-radius: 18px;
+    padding: 0.4em 0.8em;
+} */
+
+.container {
+  width: 100%;
+  position: relative;
+}
+header {
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+}
+nav .logo {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+h6 {
+  margin-left: 1em;
+  font-size: var(--smaller-font);
+}
+
+.nav-items {
+  display: none;
+}
+.show-links {
+  position: absolute;
+  top: 0;
+  bottom: 0px;
+  /* left: 70px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  /* height: calc(100vh-70px); */
+  min-height: 100vh;
+  background-color: var(--color-purple);
+  margin: 0 0 5em 0;
+  z-index: 100;
+  border-radius: 12px 12px 12px 12px;
+  /* display: hidden; */
+}
+
+nav .nav-links {
+  margin-left: 1.8em;
+}
+
+.head_btn {
+  background-color: var(--primary-color);
+  font-size: inherit;
+  font-family: inherit;
+  border-radius: 18px;
+  padding: 0.4em 0.8em;
+}
+ul {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+/* .nav-links a {
+    color: var(--Dark-Blue);
+    margin: 0 2.5em;
+} */
+/* .nav-links {
+    margin: 0.5em;
+    padding: 0.8em 0;
+} */
+
+.hidden {
+  display: none;
+}
+/* section crypto */
+.save {
+  background-color: rgb(88, 103, 118);
+  width: 62%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 0.2em; */
+  font-size: 0.8rem;
+  border-radius: 20px;
+  margin: 0 1em;
+  padding: 0.5em 0.8em;
+}
+.friday {
+  background-color: white;
+  color: gray;
+  border-radius: 15px;
+  /* margin: 0.5em; */
+  padding: 0.4em 1em;
+}
+.crypto {
+  margin: 1em 0;
+}
+
+.content {
+  font-size: 0.8rem;
+  padding: 1.5em;
+}
+.crypto_head {
+  font-size: 2.5rem;
+}
+.crypto_text {
+  margin: 1em 0;
+}
+.crypto_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: var(--primary-color); */
+  font-size: 1rem;
+  width: 45%;
+  padding: 0.3em 0.5em;
+  border-radius: 28px;
+  margin: 1em 0;
+}
+.arrow {
+  margin: 0 1em;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* .statistic {
+    display: flex;
+    flex-direction: column;
+    justify-content: centre;
+    align-items: center;
+} */
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8em 0;
+}
+
+.stats_text {
+  margin: 0.8em 1em;
+}
+
+.stats_text p {
+  font-size: 0.8rem;
+}
+.stats_text h3 {
+  font-size: 1.5rem;
+}
+/* end of section */
+
+/* why section */
+.why {
+  margin: 1em 0.5em;
+}
+.why_head {
+  font-weight: 100;
+  margin: 0.8em 0;
+}
+.why_text {
+  font-size: 1rem;
+  color: dimgrey;
+  margin: 1em 0;
+}
+.why_btn {
+  padding: 0.5em;
+  font-size: medium;
+  border-radius: 20px;
+  margin: 0.5em 0;
+}
+/* end of section */
+
+/* how much section */
+.how-much {
+  margin: 1.8em;
+  text-align: center;
+  padding-bottom: 10em;
+}
+
+.how-much p {
+  font-size: 0.8rem;
+  color: dimgray;
+  margin: 1em 0 2em;
+}
+
+/* rate section */
+.rate {
+  position: absolute;
+  top: 75em;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 1.5em 1.2em;
+  text-align: left;
+}
+.rate_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0;
+  outline: 0;
+}
+.rate p {
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin: 1.5em 0;
+}
+#rate_text {
+  color: dimgray;
+  font-size: 1rem;
+}
+.rate h2 {
+  color: black;
+  font-size: 1.7rem;
+}
+.rate h2 span {
+  color: var(--primary-color);
+}
+
+.rate_btn {
+  margin: 1em 0;
+  border: 0;
+  outline: 0;
+  padding: 0.2em 0.5em;
+  font-size: 1.2rem;
+  border-radius: 15px;
+}
+input {
+  border: 0;
+  outline: 0;
+}
+select {
+  color: black;
+  border: 0;
+  outline: 0;
+  padding-right: 75%;
+  /* padding: 0.5em 0 0; */
+  margin: 1.5em 0 0;
+  text-align: center;
+}
+option {
+  text-align: start;
+}
+
+/* coin section */
+
+.coin {
+  text-align: center;
+  background-color: rgb(239, 237, 237);
+  padding: 1.5em 0 1em;
+}
+.coin_head {
+  color: rgb(36, 35, 35);
+  margin: 4em 2em;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5em 8em;
+
+  /* margin: 8em 0.8em; */
+}
+.bitcoin {
+  background-color: var(--color-purple);
+  padding: 1em;
+  border-radius: 20px;
+  margin: 1em 0;
+}
+small {
+  font-size: 1.2rem;
+  color: dimgray;
+}
+.bit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0;
+}
+.coin_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  border: 0;
+  border-radius: 28px;
+}
+.bit_img {
+  margin-left: 0.3em;
+}
+.bitcoin_img {
+  margin: 0.5em 0;
+}
+.bitcoin h3 {
+  margin: 1em 0;
+}
+.bitcoin p {
+  font-size: 1rem;
+  margin: 0.5em 0;
+}
+.ethereum {
+  background-color: white;
+}
+.eth_head {
+  color: rgb(36, 35, 35);
+}
+.eth {
+  color: rgb(36, 35, 35);
+}
+@media (min-width: 768px) {
+  nav .nav-items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  nav .hamburger {
+    display: none;
+  }
+
+  .close {
+    display: none;
+  }
+
+  .crypto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0;
+  }
+}
